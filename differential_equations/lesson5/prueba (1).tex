@@ -1,0 +1,912 @@
+\documentclass[a4paper,10pt]{article}
+% packages
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{datetime}  
+\geometry{a4paper,total={170mm,257mm},left=20mm,top=20mm,}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{color}
+\usepackage{listingsutf8}
+\usepackage{subcaption}
+\usepackage{siunitx}
+\usepackage{graphicx}
+
+\usepackage{blindtext}  
+\usepackage{multicol}  
+
+
+% Title
+\title{Solutions of the Exercises of Lesson 5}
+\author{Vega Vázquez Ardid}
+\date{\today}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item 1. Classify the stability of the following systems in: Liapunov stable, asymptotically stable, or none of the above.
+        \begin{enumerate}
+            \item
+                \begin{equation}
+                    \begin{aligned}
+                        \Dot{x}=y\\
+                        \Dot{y}=-4x\\
+                    \end{aligned}
+                \end{equation}
+                \begin{equation}
+                    \begin{bmatrix}
+                        \dot{x}\\
+                        \dot{y}
+                    \end{bmatrix}
+                    =
+                    \begin{bmatrix}
+                        0 & 1\\
+                        -4 & 0
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        x\\
+                        y
+                    \end{bmatrix}
+                \end{equation}
+                \begin{equation}
+                    \left.
+                    \Delta = 4 > 0 \atop
+                    \tau=0
+                    \right\}{centers}
+                \end{equation}
+                \begin{equation}
+                    \begin{aligned}
+                        p(\lambda)= \lamda^{2} + 4=0\\
+                        \lambda= \pm2i\\
+                        x(t)= c1e^{\lambda_{1}t}\vec{v_{1}} + c2e^{\lambda_{2}t}\vec{v_{2}}\\
+                        \lambda_{1}= \alpha_{1} + \beta_{1}i\\
+                        e^{\lambda_{1}t}= e^{(\alpha_{1} + \beta_{1}i)t}= e^{\alpha_{1}t}e^{\beta_{1}it}= e^{\alpha_{1}t}(cos(\beta_{1}t) + isen(\beta_{2}t))\\
+                        y= \dot{x}\\
+                        \dot{y}= \"x\\
+                        \dot{y}= -4x\\
+                        \"x= -4x\\
+                        \"x+4x= 0\\
+                        \text{homogeneous EDO,second order}\\
+                        x(t)=c1cos(2t) + c2sen(2t)\\
+                        y(t)=-c1sent(2t) + 2c2cos(2t)\\
+                        (x_{0}, y_{0}), t=0\\
+                        x_{0}=c1\\
+                        y_{0}= 2c2, c2= \frac{y_{0}}{2}\\
+                        x(t)= x_{0}cos(2t) + \frac{y_{0}}{2}sen(2t)\\
+                        y(t)= -x_{0}sen(2t) + y_{0}cos(2t)\\
+                        \text{if  t} \to \infty\\
+                        x(t), y(t) \leq 1\\
+                        Because:\\
+                        \abs{sent(2t)}\leq 1\\
+                        \abs{cos(2t)}\leq 1\\
+                        \textbf{Liapunov stable}
+                            
+                    \end{aligned}
+                \end{equation}
+                
+                
+            \item 
+                \begin{equation}
+                    \begin{aligned}
+                        \dot{x}= 2y\\
+                        \dot{y}= x
+                    \end{aligned}
+                \end{equation}
+                \begin{equation}
+                    \begin{bmatrix}
+                        \dot{x}\\
+                        \dot{y}
+                    \end{bmatrix}
+                    =
+                    \begin{bmatrix}
+                        0 & 2\\
+                        0 & 1
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        x\\
+                        y
+                    \end{bmatrix}
+                    
+                \end{equation}
+                \begin{equation}
+                    \left.
+                    \Delta =  0 \atop
+                    \tau=1
+                    \right\}{\text{line of unstable fixed points}}
+                \end{equation}
+                \begin{equation}
+                    \begin{aligned}
+                        p(\lambda)= \lambda^{2}-\lambda=0\\
+                        \lambda_{1}=0\\
+                        \lambda_{2}=1\\
+                        x(t) = c1 + c2e^{t}\vec{v2}\\
+                        Eigenvectors:\\
+                        \abs{\Delta - \lambdaI_{2}}v=0\\
+                        \lambda=0\\
+                        \begin{bmatrix}
+                            0 & 2\\
+                            0 &1 
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            v1\\
+                            v2
+                        \end{bmatrix}
+                        = 
+                        \begin{bmatrix}
+                            0\\
+                            0
+                        \end{bmatrix}
+                        2v2 + v2=0\\
+                        3v2=0\\
+                        v(1,0)
+                        \lambda=1
+                        \begin{bmatrix}
+                            -1 & 2\\
+                            0 & 0 
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            v1\\
+                            v2
+                        \end{bmatrix}
+                        = 
+                        \begin{bmatrix}
+                            0\\
+                            0
+                        \end{bmatrix}
+                        -v1 +v2=0\\
+                        v2=v1\\
+                        v2(1,1)
+                    \end{aligned}
+                \end{equation}
+            \item
+                \begin{equation}
+                    \begin{aligned}
+                        x=x_{0}\\
+                        \dot{y}=x_{0}\\
+                        y =x_{0}t + y\\
+                       c\text{if t}\to \infty\\
+                        \text{uniform motion}\\
+                        \textbf{trajectories tend to infinite, unstable}
+                    
+                    \end{aligned}
+                \end{equation}
+            \item
+                \begin{equation}
+                    \begin{aligned}
+                        \dot{x}= 0\\
+                        \dot{y}= -y\\
+                    \end{aligned}
+                \end{equation}
+                \begin{equation}
+                    \begin{bmatrix}
+                        \dot{x}\\
+                        \dot{y}
+                    \end{bmatrix}
+                    =
+                    \begin{bmatrix}
+                        0 & 0\\
+                        0 & -1
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        x\\
+                        y
+                    \end{bmatrix}
+                \end{equation}
+                \begin{equation}
+                    \left.
+                    \Delta = 0 \atop
+                    \tau=-1 
+                    \right\}{\text{line of stable fixed points}}
+                \end{equation}
+                \begin{equation}
+                    \begin{aligned}
+                        p(\lambda)= \lambda^{2} + \lambda=0\\
+                        \lambda_{1}= 0\\
+                        \lambda_{2}= -1\\
+                        x(t)= c1\vec{v1} + c2e^{-t}\vec{v2}\\
+                        Eigenvectors:\\
+                        \lambda=0\\
+                        \begin{bmatrix}
+                            0 & 0\\
+                            0 &-1 
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            v1\\
+                            v2
+                        \end{bmatrix}
+                        = 
+                        \begin{bmatrix}
+                            0\\
+                            0
+                        \end{bmatrix}
+                        v(1,0)\\
+                        \lambda= -1\\
+                        \begin{bmatrix}
+                            1 & 0\\
+                            0 &0 
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            v1\\
+                            v2
+                        \end{bmatrix}
+                        = 
+                        \begin{bmatrix}
+                            0\\
+                            0
+                        \end{bmatrix}
+                        v(0,1)\\
+                        \begin{bmatrix}
+                            x_{0}\\
+                            y_{0}
+                        \end{bmatrix}
+                        =
+                        \begin{bmatrix}
+                            1\\
+                            0
+                        \end{bmatrix}c1
+                        \begin{bmatrix}
+                            0\\
+                            1
+                        \end{bmatrix}c2\\
+                        x_{0}= c1\\
+                        y_{0}=c2\\
+                        x(t)= x_{0}\\
+                        y(t)= y_{0}e^{-t}\\
+                        \text{if  t} \to \infty\\
+                        y(t) \to 0 \\
+                        \textbf{Liapunov stable}
+                    \end{aligned}
+                \end{equation}
+                
+            \item 
+                \begin{equation}
+                    \begin{aligned}
+                        \left.
+                        \dot{x}=-x \atop
+                        \dot{y}= -5y
+                        \right\}{\text{decoupled system}}\\
+                        \text{separable variables}\\
+                        \frac{dx}{dt}= -x\\
+                        \frac{-dx}{x}= dt\\
+                        -ln(x)= t +c\\
+                        ln(x)= -t +c\\
+                        x(t)= e^{-t}c\\
+                        t=0\\
+                        x(0)=x_{0}\\
+                        \boxed{x(t)= x_{0}e^{-t}}\\
+                        \dot{y}=-5y\\
+                        \frac{dy}{y}= -5dt\\
+                        ln(y)= -5t +c\\
+                        t=0\\
+                        y(0)=y_{0}\\
+                        y=e^{-5t}c\\
+                        \boxed{y=e^{-5t}y_{0}}\\
+                        \text{if  t} \to \infty\\
+                        (x_{0},y_{0})=(0,0)\\
+                        \textbf{Asymptotically stable}
+                    
+                    \end{aligned}
+                \end{equation}
+            \item 
+                \begin{equation}
+                    \begin{aligned}
+                        \left.
+                        \dot{x}=x \atop
+                        \dot{y}= y
+                        \right\}{\text{decoupled system}}\\
+                        \text{separable variables}\\
+                        \frac{dx}{dt}= x\\
+                        ln(x)= t+c\\
+                        x(t)= e^{t}c\\
+                        t=0\\
+                        x(0)=x_{0}\\
+                        x(t)=x_{0}e^{t}\\
+                        \frac{dy}{y}= y\\
+                        Ln(y)= t +c\\
+                        y= e^{t}c\\
+                        t=0\\
+                        y(0)= y_{0}\\
+                        y(t)=y_{0}e^{t}\\
+                        \text{if t}\to \infty\\
+                        \text{trajectories go away from origin}\\
+                        \textbf{unstable}
+                    \end{aligned}
+                \end{equation}
+        \end{enumerate}
+    \item Consider the system
+        \begin{enumerate}
+            \item Write the system as x˙ = Ax.
+                \begin{equation}
+                    \begin{aligned}
+                        \dot{x}= 4x-y\\
+                        \dot{y}= 2x +y
+                    \end{aligned}
+                \end{equation}
+                \begin{equation}
+                    \begin{bmatrix}
+                        \dot{x}\\
+                        \dot{y}
+                    \end{bmatrix}
+                    =
+                    \begin{bmatrix}
+                        4 & -1\\
+                        2 & 1
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        x\\
+                        y
+                    \end{bmatrix}
+                \end{equation}
+                \begin{equation}
+                    \begin{aligned}
+                        \left.
+                        \Delta= 6\\
+                        \tau=5
+                        \right\}\hspace{0.2cm}{source}\\
+                        p(\lambda)= \lambda^{2}-5\lambda+6=0\\
+                        \lambda_{1}= 3\\
+                        \lambda_{2}= 2\\
+                        Eigenvectors:\\
+                        \lambda_{1}= 3\\
+                        \begin{bmatrix}
+                            1 &-1\\
+                            2 -2
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            v1\\
+                            v2
+                        \end{bmatrix}
+                        =
+                        \begin{bmatrix}
+                            0\\
+                            0
+                        \end{bmatrix}\\
+                        v1-v2=0\\
+                        v1=v2\\
+                        v1(1,1)\\
+                        \lambda_{2}= 2\\
+                        \begin{bmatrix}
+                            2 &-1\\
+                            2 -1
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            v1\\
+                            v2
+                        \end{bmatrix}
+                        =
+                        \begin{bmatrix}
+                            0\\
+                            0
+                        \end{bmatrix}\\
+                        2v1-v2=0\\
+                        2v1=v2\\
+                        v2(1,2)
+                    \end{aligned}
+                \end{equation}
+                
+            \item Find the general solution of the system.
+                \begin{equation}
+                    \begin{aligned}
+                        x(t)= c1e^{3t}\vec{v1} + c2e^{2t}\vec{v2}\\
+                        x(t)=
+                        \begin{bmatrix}
+                            1\\
+                            1
+                        \end{bmatrix}c1e^{3t}
+                        +
+                        \begin{bmatrix}
+                            1\\
+                            2
+                        \end{bmatrix}c2e^{2t}
+                    \end{aligned}
+                \end{equation}
+                
+            \item Classify the fixed point at the origin
+                \begin{equation}
+                    \begin{aligned}
+                        \Delta >0\\
+                        \tau>0\\
+                        \Delta <\frac{1}{4}\tau^{2}\\
+                        \text{source, unstable}
+                    \end{aligned}
+                \end{equation}
+               
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej2imgc.jpg}
+                    \caption{classification in axes trace and determinant}
+                    \label{fig:mesh1}
+                \end{figure}
+            \item Solve the system subject to the initial condition (x0, y0) = (3, 4).
+                \begin{equation}
+                    \begin{bmatrix}
+                        3\\
+                        4
+                    \end{bmatrix}
+                        =
+                    \begin{bmatrix}
+                        1\\
+                        1
+                    \end{bmatrix}c1
+                        +
+                    \begin{bmatrix}
+                        1\\
+                        2
+                    \end{bmatrix}c2
+                \end{equation}
+                \begin{equation}
+                    \begin{aligned}
+                        \left.
+                        3= c1 + c2\atop
+                        4= c1+ c2
+                        \right\}\\
+                        c1= 2\\
+                        c2= 1\\
+                        \left.
+                        x(t)= 2e^{3t} + e^{2t}\atop
+                        y(t)=
+                        \right\}
+                    \end{aligned}
+                \end{equation}
+        \end{enumerate}
+    \item Plot the phase portrait and classify the fixed point of the following linear systems. If the eigenvectors are real, indicate them in your sketch.
+        \begin{enumerate}
+            \item
+                \begin{equation}
+                    \begin{aligned}
+                        \dot{x}=y\\
+                        \dot{y}=-2x-3y
+                    \end{aligned}
+                \end{equation}
+                \begin{equation}
+                    \begin{bmatrix}
+                        \dot{x}\\
+                        \dot{y}
+                    \end{bmatrix}
+                    =
+                    \begin{bmatrix}
+                        0 &1\\
+                        -2 &-3
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        x\\
+                        y
+                    \end{bmatrix}
+                \end{equation}
+                \begin{equation}
+                    \begin{aligned}
+                        p(\lambda)= \lambda^{2}+3\lambda +2=0\\
+                        \lambda_{1}=-1\\
+                        \lambda_{2}= -2\\
+                        Eigenvectors:\\
+                        \lambda=-1\\
+                        \begin{bmatrix}
+                            1 &1\\
+                            -1&-3
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            v1\\
+                            v2
+                        \end{bmatrix}
+                        =
+                        \begin{bmatrix}
+                            0\\
+                            0
+                        \end{bmatrix}\\
+                        v2=-v1\\
+                        v1(1,-1)\\
+                        \lambda= -2\\
+                        \begin{bmatrix}
+                            2 &1\\
+                            -2&-1
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            v1\\
+                            v2
+                        \end{bmatrix}
+                        =
+                        \begin{bmatrix}
+                            0\\
+                            0
+                        \end{bmatrix}\\
+                        2v1=-v2\\
+                        v2=(2,-1)\\
+                        \Delta>0\\
+                        \tau<0\\
+                        \Delta <\frac{1}{4}\tau^{2}\\
+                        \textbf{sink, stable}
+                    \end{aligned}
+                \end{equation}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej3imga.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+            \item 
+                \begin{equation}
+                    \begin{aligned}
+                        \dot{x}= 3x-4y\\
+                        \dot{y}= x- y
+                    \end{aligned}
+                \end{equation}
+                \begin{equation}
+                    \begin{bmatrix}
+                        \dot{x}\\
+                        \dot{y}    
+                    \end{bmatrix}
+                    =
+                    \begin{bmatrix}
+                        3 &-4\\
+                        1 &-1
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        x\\
+                        y
+                    \end{bmatrix}
+                \end{equation}
+                \begin{equation}
+                    \begin{aligned}
+                        \Delta=1\\
+                        \tau= 2\\
+                        p(\lambda)= \lambda^{2}-2\lambda +1=0\\
+                        Eigenvectors:\\
+                        \lambda=1\\
+                        \begin{bmatrix}
+                            2&-4\\
+                            1 &-2
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            v1\\
+                            v2
+                        \end{bmatrix}
+                        =
+                        \begin{bmatrix}
+                            0\\
+                            0
+                        \end{bmatrix}\\
+                        2v1-4v2=0\\
+                        v1(2,4)\\
+                        \Delta>0\\
+                        \tau>0\\
+                        \Delta =\frac{1}{4}\tau^{2}\\
+                        \text{one eigenvector}\\
+                        \textbf{Degenerate source}
+                    \end{aligned}
+                \end{equation}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej3imgb.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                
+            \item 
+                \begin{equation}
+                    \begin{aligned}
+                        \dot{x}= 5x +2y\\
+                        \dot{y}=-17x-5y
+                    \end{aligned}
+                \end{equation}
+                \begin{equation}
+                    \begin{bmatrix}
+                        \dot{x}\\
+                        \dot{y}    
+                    \end{bmatrix}
+                    =
+                    \begin{bmatrix}
+                        5 & 2\\
+                        -17 &-5
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        x\\
+                        y
+                    \end{bmatrix}
+                \end{equation}
+                \begin{equation}
+                    \begin{aligned}
+                        \Delta=9\\
+                        \tau= 0\\
+                        p(\lambda)=\lambda^{2} +9\\
+                        \lambda_{1}= 3i\\
+                        \lambda_{2}=-3i\\
+                        Eigenvectors:\\
+                        \lambda= 3i\\
+                        \begin{bmatrix}
+                            5-3i& 2\\
+                            -17& -5-3i
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            v1\\
+                            v2
+                        \end{bmatrix}
+                        =
+                        \begin{bmatrix}
+                            0\\
+                            0
+                        \end{bmatrix}\\
+                        v1(5-3i, -2)\\
+                        \lambda=-3i\\
+                        \begin{bmatrix}
+                            5+3i& 2\\
+                            -17& -5+3i
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            v1\\
+                            v2
+                        \end{bmatrix}
+                        =
+                        \begin{bmatrix}
+                            0\\
+                            0
+                        \end{bmatrix}\\
+                        v2(5+3i,-2)\\
+                        \Delta > 0\\
+                        \tau =0\\
+                        \textbf{centers}
+                    \end{aligned}
+                \end{equation}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej3imgc.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+            \item 
+                \begin{equation}
+                    \begin{aligned}
+                        \dot{x}=4x-3y\\
+                        \dot{y}=8x -6y
+                    \end{aligned}
+                \end{equation}
+                \begin{equation}
+                    \begin{bmatrix}
+                        \dot{x}
+                        \dot{y}
+                    \end{bmatrix}
+                    =
+                    \begin{bmatrix}
+                        4 & -3\\
+                        8 & -6
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        x\\
+                        y
+                    \end{bmatrix}
+                \end{equation}
+                \begin{equation}
+                    \begin{aligned}
+                        \Delta=0\\
+                        \tau=-2\\
+                        p(\lambda)= \lambda^{2}+2\lambda\\
+                        \lambda_{1}= 0\\
+                        \lambda_{2}= -2\\
+                        Eigenvectors:\\
+                        \lambda= 0\\
+                        \begin{bmatrix}
+                            4 & -3\\
+                            8 & -6
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            v1\\
+                            v2
+                        \end{bmatrix}
+                        =
+                        \begin{bmatrix}
+                            0\\
+                            0
+                        \end{bmatrix}\\
+                        v1(4,3)\\
+                        \lambda= -2\\
+                        \begin{bmatrix}
+                            6 & -3\\
+                            8&-4
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            v1\\
+                            v2
+                        \end{bmatrix}
+                        =
+                        \begin{bmatrix}
+                            0\\
+                            0
+                        \end{bmatrix}\\
+                        v2(2,1)\\
+                        \Delta=0\\
+                        \tau<0\\
+                        \textbf{line of stable fixed points}
+                    \end{aligned}
+                \end{equation}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej3imgd.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+        \end{enumerate}
+        
+    \item . Show that any matrix of the form A = 0 has only a one-dimensional eigenspace corresponding to the eigenvalue λ. Then solve the system x˙ = Ax and sketch the phase portrait.
+        \begin{equation}
+            \begin{bmatrix}
+                a & b\\
+                c & d
+            \end{bmatrix}
+        \end{equation}
+        c=0\\
+        \begin{equation}
+            \begin{aligned}
+                \dot{x}=\lambda x + by\\
+                \dot{y}=\lambda y\\
+                \frac{dy}{dt}=\lambda y\\
+                ln(y)= \lambda t +c \\
+                y(t)= ce^{\lambda t}\\
+                \dot{x}=\lambda x + by\\
+                \dot{x}=\lambda x + bce^{\lambda t}\\
+                \dot{x}-\lambda x = bce^{\lambda t}\\
+                e^{-\lambda t}(\dot{x}-\lambda x)=bc\\
+                e^{-\lambda t}\dot{x}-e^{-\lambda t}\lambda x=bc\\
+                d(xe^{-\lambda t})=e^{-\lambda t}\dot{x}-e^{-\lambda t}\lambda x\\
+                d(xe^{-\lambda t})=bc\\
+                xe^{-\lambda t}=\int bcdt\\
+                x=e^{\lambda t}(bct+k)\\
+                y= ce^{\lambda t}
+                Eigenvectors:\\
+                \begin{bmatrix}
+                    \lambda-\delta & b\\
+                    0 & \lambda-\delta
+                \end{bmatrix}
+                =0\\
+                (\lambda-\delta)^{2}=0\\
+                \lambda=\delta (double)\\
+                \begin{bmatrix}
+                    0& b\\
+                    0& 0
+                \end{bmatrix}
+                \begin{bmatrix}
+                    v1\\
+                    v2
+                \end{bmatrix}
+                =
+                \begin{bmatrix}
+                    0\\
+                    0
+                \end{bmatrix}\\
+                bv2=0\\
+                v(1,0)\\
+                \textbf{one dimensional eigenspace vector}
+            \end{aligned}
+        \end{equation}
+        \newpage
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.40\textwidth]{ej4img.jpg}
+                \label{fig:mesh1}
+            \end{figure}
+            
+    \item . (Damped harmonic oscillator) The motion of a damped harmonic oscillator is described by mx¨+bx˙ +kx  0, where b > 0 is the damping constant.
+        \begin{enumerate}
+            \item  Rewrite the equation as a two-dimensional linear system.Rewrite the equation as a two-dimensional linear system.
+                \begin{equation}
+                    \begin{aligned}
+                        \"x=\frac{-(b\dot{x}+kx)}{m}\\
+                        \dot{y}=\"x=\frac{-(b\dot{x}+kx)}{m}\\
+                        \dot{x}=y\\
+                        \frac{-(b\dot{x}+kx)}{m}= \frac{-by}{m}-\frac{kx}{m}\\
+                        \begin{bmatrix}
+                            \dot{x}\\
+                            \dot{y}
+                        \end{bmatrix}
+                        =
+                        \begin{bmatrix}
+                            o & y\\
+                            \frac{-k}{m}& \frac{-b}{m}
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            x\\
+                            y
+                        \end{bmatrix}
+                        
+                    \end{aligned}
+                \end{equation}
+            
+            
+            \item Classify the fixed point at the origin and sketch the phase portrait. Be sure to show all the different cases that can occur, depending on the relative sizes of the parameters.
+                \begin{equation}
+                    \begin{aligned}
+                        \Delta= \frac{k}{m}y\\
+                        \tau= \frac{-b}{m}\\
+                        p(\lambda)=\lambda^{2}+ \frac{b}{m}\lambda +\frac{k}{m}y=0\\
+                        \lambda= \frac{\frac{-b}{m}\pm\sqrt{(\frac{b}{m})^{2}-4\frac{k}{m}y}}{2}\\
+                        \lambda= \frac{-b\pm\sqrt{b^{2}-4ky}}{2m}\\
+                    \end{aligned}
+                \end{equation}
+                \begin{equation}
+                    \begin{aligned}
+                        if\hspace{0.2cm} b^{2}-4ky > 0\\
+                        \textbf{stable node, source}
+                    \end{aligned}
+                \end{equation}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej5imgb1.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \begin{equation}
+                    \begin{aligned}
+                        if\hspace{0.2cm} b^{2}-4ky < 0\\
+                        \textbf{spiral source}
+                    \end{aligned}
+                \end{equation}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej5imgb2.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \begin{equation}
+                    \begin{aligned}
+                        if\hspace{0.2cm} b^{2}-4ky = 0\\
+                        \textbf{degenerate source}
+                    \end{aligned}
+                \end{equation}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej5imgb3.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+            \item How do your results relate to the standard notions of overdamped, critically damped, and underdamped vibrations?\\
+                source \xrightarrow{} overdamped\\
+                degenerate source \xrightarrow{} critically damped\\
+                spiral source \xrightarrow{} underdamped 
+            
+        \end{enumerate}
+        
+        
+    
+    \item (Out of touch with their own feelings) Suppose Romeo and Juliet react to each other, but not to themselves: R˙ = aJ, J˙ = bR. What happens? Analyze the cualitative behaviour depending on the parameters.
+        \begin{equation}
+            \begin{bmatrix}
+                \dot{R}\\
+                \dot{J}
+            \end{bmatrix}
+            = 
+            \begin{bmatrix}
+                0 & a\\
+                b &0
+            \end{bmatrix}
+            \begin{bmatrix}
+                R\\
+                J
+            \end{bmatrix}
+        \end{equation}
+        \begin{equation}
+            \begin{aligned}
+                \Delta= -ba\\
+                \tau=0\\
+                p(\lambda)= \lambda^{2}-ba=0\\
+                \lambda= \pm \sqrt{ba}\\
+                if \hspace{0.2cm} ba<0 \xrightarrow{} center\\
+                if \hspace{0.2cm} ba>0 \xrightarrow{} \text{saddle node}
+            \end{aligned}
+        \end{equation}
+    
+
+
+
+
+
+
+
+\end{enumerate}
+\end{document}
