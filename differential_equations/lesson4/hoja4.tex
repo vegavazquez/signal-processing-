@@ -1,0 +1,569 @@
+\documentclass[a4paper,10pt]{article}
+% packages
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{datetime}  
+\geometry{a4paper,total={170mm,257mm},left=20mm,top=20mm,}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{color}
+\usepackage{listingsutf8}
+\usepackage{subcaption}
+\usepackage{siunitx}
+\usepackage{graphicx}
+
+\usepackage{blindtext}  
+\usepackage{multicol}  
+
+
+% Title
+\title{Solutions of the Exercises of Lesson 4}
+\author{Vega Vázquez Ardid}
+\date{\today}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item
+    For each of the following exercises, sketch all the qualitatively different vector fields that occur as r is varied. Show that a saddle-node bifurcation occurs at a critical value of r, to be determined. Finally, sketch the bifurcation diagram of fixed points x∗ versus r
+        \begin{enumerate}
+            \item 
+                \begin{equation}
+                    \Dot{x}= 1 + rx + x^{2}
+                \end{equation}
+                Analytical solution:
+                \begin{equation}
+                    \begin{aligned}
+                        f(x)= 1 + rx + x^{2}\\
+                        f(x)=0\\
+                        x= \frac{-r  \pm \sqrt{r^{2}-1}}{2}\\
+                        \left.
+                        \begin{array}{rcl}
+                            r= \pm 2 \xrightarrow{} \text{1 point} \\
+                            r= 2 \xrightarrow{} -1\\
+                            r= -2 \xrightarrow{} 1\\
+                        \end{array}
+                        \right\}
+                        1)\\
+                        2) \hspace{0.2cm}if \hspace{0.2cm}\abs{r}> 2 \xrightarrow{} \text{2 points}\hspace{0.2cm} r >2 , r<-2\\
+                        3)\hspace{0.2cm} if \hspace{0.2cm}\abs{r}<2 \xrightarrow{} \emptyset \text{points}\hspace{0.2cm} r<2, r>-2\\ 
+                    
+                    \end{aligned}
+                \end{equation}
+               Graphical solution:
+               \begin{equation}
+                   \begin{aligned}
+                       f_{1}(x)= 1+ x^{2}\\
+                       f_{2}(x)= -rx
+                   \end{aligned}
+               \end{equation}
+                1)
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej1img11.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej1img12.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure}
+                2)
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej1img21.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej1img22.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure}
+                3)
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej1img31.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej1img32.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure}
+                x vs r
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej1img4.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure}
+            
+            
+            \item 
+                \begin{equation}
+                    \dot{x}= r + x - ln(1+x)
+                \end{equation}
+                Analytical solution:
+                \begin{equation}
+                    \begin{aligned}
+                        f_{1}(x)= r+x\\
+                        f_{2(x)}= ln( 1+x)\\
+                        \text{there is only two options, either}\hspace{0.2cm}x> -1, \text{or x= 0}\\
+                        \text{In order to see if it increases or decreases we obtain the second derivative}\\
+                        f'_{2}(x)=\frac{1}{1+x}> 0 \xrightarrow{} increases
+                    \end{aligned}
+                \end{equation}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej1img5.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+                Graphical solution:
+                
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej1img61.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure} 
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej1img62.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej1img63.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej1img7.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure}
+                
+        \end{enumerate}
+    \item For each of the following exercises, sketch all the qualitatively different vector fields that occur as r is varied. Show that a transcritical bifurcation occurs at a critical value of r, to be determined. Finally,
+    sketch the bifurcation diagram of fixed points x∗ vs. r
+        \begin{enumerate}
+            \item 
+                \begin{equation}
+                    \begin{aligned}
+                    \dot{x}= rx + x^{2}\\
+                    rx + x^{2}=0\\
+                    x=0\\
+                    x=-r
+                    \end{aligned}
+                    
+                \end{equation}
+                Graphically:
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej2imga1.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej2imga2.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej2imga3.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej2imga4.jpg}
+                    
+                    \label{fig:mesh1}
+                \end{figure}
+            \item
+                \begin{equation}
+                    \begin{aligned}
+                        \dot{x}= x- rx(1-x)\\
+                        (1-r)x + rx^{2}\\
+                        x= 0\\
+                        x= 1 - \frac{1}{r}
+                    \end{aligned}
+                \end{equation}
+               \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej2imgb1.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej2imgb2.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej2imgb3.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej2imgb4.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                
+        \end{enumerate}
+        
+        
+    \item In the following exercises, sketch all the qualitatively different vector fields that occur as r is varied. Show that a pitchfork bifurcation occurs at a critical value of r (to be determined) and classify the bifurcation as supercritical or subcritical. Finally, sketch the bifurcation diagram of x∗ vs. r.
+        \begin{enumerate}
+            \item 
+                \begin{equation}
+                    \begin{aligned}
+                        \dot{x}=rx + 4x^{3}\\
+                        x(r+4x^{2})=0\\
+                        x=0\\
+                        x=\pm\sqrt{\frac{-r}{4}}\\
+                        \text{r must be negative in order for three fixed points to exists}
+                    \end{aligned}
+                \end{equation}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej3imga1.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej3imga2.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej3imga3.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej3imga4.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+            \item
+                \begin{equation}
+                    \begin{aligned}
+                        \dot{x}= rx- 4x^{3}\\
+                        \text{opposite case to a)}\\
+                        x=0\\
+                        r-4x^{2}=0\\
+                        x=\pm\sqrt{\frac{r}{4}}\\
+                        \text{r must be positive in order for three fixed points to exists}
+                    \end{aligned}
+                \end{equation}
+                
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej3imgb1.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej3imgb2.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+               \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej3imgb3.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej3imgb4.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+        \end{enumerate}
+        
+    \item The next exercises are designed to test your ability to distinguish among the various types of bifurcations it’s easy to confuse them! In each case, find the values of r at which bifurcations occur, and classify those as saddle-node, transcritical, supercritical pitchfork, or subcritical pitchfork. Finally, sketch the bifurcation diagram of fixed points x∗ vs. r.
+        \begin{enumerate}
+            \item 
+                \begin{equation}
+                    \begin{aligned}
+                        \dot{x}= r- 3x^{2}\\
+                        r- 3x^{2}=0\\
+                        x=\pm \sqrt{\frac{r}{3}}\\
+    
+                    \end{aligned}
+                \end{equation}
+                \newpage
+                Graphically:
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej4imga1.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej4imga2.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej4imga3.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej4imga4.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                
+            \item
+                \begin{equation}
+                    \begin{aligned}
+                        \dot{x}= 5- re^{-x^{2}}\\
+                        x= \pm\sqrt{-ln\frac{5}{r}}\\
+                        
+                    \end{aligned}
+                \end{equation}
+                \newpage
+                Graphically:
+                
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej4imgb1.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej4imgb2.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej4imgb3.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej4imgb4.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+                
+            \item
+                \begin{equation}
+                    \begin{aligned}
+                        \dot{x}= x + tanh(rx)\\
+                        tanh(rx)= -x\\
+                    \end{aligned}
+                
+                \end{equation}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej4imgc1.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \newpage
+                Graphically:
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej4imgc2.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej4imgc3.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                
+                \begin{equation}
+                    \begin{aligned}
+                        if \hspace{0.2cm}r< 0\\
+                        f(x)= x+ tanh(x)\\
+                        t=-r\\
+                        t>0\\
+                        x+ tanh(-tx)= x-tanh(tx9\\
+                        if \hspace{0.2cm}r= -1\\
+                        tanh(-x)=-x\\
+                        -tanh(x)= -x\\
+                        x=0 \hspace{0.2cm}\text{fixed point}\\
+                        if \hspace{0.2cm}r<-1\\
+                        tanh(rx)= -x\\
+                        \text{ 3 fixed points}
+                    \end{aligned}
+                \end{equation}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej4imgc4.jpg}
+                    \label{fig:mesh1}
+                \end{figure} 
+                \begin{equation}
+                    \begin{aligned}
+                        -1<r<0\\
+                        x=0, unstable\\
+                        -tanh(x)= -x\\
+                        -tanh(x)+x=0
+                    \end{aligned}
+                \end{equation}
+                \newpage
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej4imgc5.jpg}
+                    \label{fig:mesh1}
+                \end{figure}
+                \begin{equation}
+                    \begin{aligned}
+                        r<-1\\
+                        tanh(rx) + x=0
+                    \end{aligned}
+                \end{equation}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej4imgc6.jpg}
+                    \caption{pitchfork x=-1}
+                    \label{fig:mesh1}
+                \end{figure}
+               
+        \end{enumerate}
+        
+    \newpage    
+    \item Calculate rc, where rc is defined by the condition that V has three equally deep wells, i.e., the values of V at the three local minima are equal. (Note: In equilibrium statistical mechanics, one says that a first-order phase transition occurs at r = rc. For this value of r, there is equal probability of finding the system in the state corresponding to any of the three minima. The freezing of water into ice is the most familiar example of a first-order phase transition.) 
+            \begin{equation}
+                \begin{aligned}
+                    f(x)= \frac{-dv}{dx}\\
+                    \frac{dv}{dx}= -rx -x^{3}-x^{5}\\
+                     -rx -x^{3}-x^{5}=0\\
+                     x_{1}=0\\
+                     t^{2}=x^{4}\\
+                     t=x^{2}\\
+                     -t^{2} + t +r=0
+                     t=\frac{-1\pm \sqrt{1+ 4r}}{-2}= \frac{-1\pm\sqrt{1+ 4r}}{2}\\
+                     x^{2}= \frac{1\pm\sqrt{1+4r}}{2}\\
+                     x_{2}= \sqrt{\frac{1+\sqrt{1+4r}}{2}}\\
+                     x_{3}= -\sqrt{\frac{1+\sqrt{1+4r}}{2}}\\
+                     x_{4}=\sqrt{\frac{1-\sqrt{1+4r}}{2}}\\
+                     x_{5}=-\sqrt{\frac{1-\sqrt{1+4r}}{2}}\\
+                     \text{calculating the local minimum}\\
+                     \frac{d^{2}}{dx}= -r -3x^{2}+5x^{4}>0\\
+                     \frac{d^{2}}{dx}(x_{1})=-r>0 if \hspace{0.2cm}r<0\\
+                     \frac{d^{2}}{dx}(x_{2})= -r -\frac{3}{2}(1+\sqrt{1+4r})+5((\sqrt{\frac{1+\sqrt{1+4r}}{2}})^{2})^{2}=\\
+                     =-r +\frac{3}{2}(1+\sqrt{1+4r}) + 5(1+2r+\sqrt{1+4r})>0\\
+                     4r>-1\\
+                     r> \frac{-1}{4}\\
+                     x_{2}=x_{3}\\
+                     \frac{d^{2}}{dx}(x_4)=-r +\frac{3}{2}(1+\sqrt{1+4r}) + 5( 1 + 2r - \sqrt{1+4r})>0 \\
+                     r>0\\
+                     x_{4}=x_{5}\\
+                     x_{1}=x_{2}=x_{3}\\
+                     v=\int -f(x)dx= -r\frac{x^{2}}{2} - \frac{x^{4}}{4} + \frac{x^{6}}{6}\\
+                     \frac{-r}{2}(\sqrt{1+ \sqrt{1+4r}})^{2} - \frac{1}{4}(\sqrt{1+\sqrt{1+4r}})^{4} + \frac{1}{6}(\sqrt{1+\sqrt{1+4r}})^{6}=\\
+                     = \frac{-r}{2}(-\sqrt{1+ \sqrt{1+4r}})^{2} - \frac{1}{4}(-\sqrt{1+\sqrt{1+4r}})^{4} +\frac{1}{6}(-\sqrt{1+\sqrt{1+4r}})^{6}\\
+                     r= \frac{-3}{16}
+                \end{aligned}
+            \end{equation}
+            \newpage
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.40\textwidth]{ej5img1.jpg}
+                \caption{pitchfork x=-1}
+                \label{fig:mesh1}
+            \end{figure}
+    \newpage         
+    \item (Nondimensionalizing the logistic equation) Consider the logistic equation N˙ = rN(1−N/K), with initial condition N(0) = N0. 
+        \begin{enumerate}
+            \item This system has three dimensional parameters r, K, and N0. Find the dimensions of each of these parameters.
+                \begin{equation}
+                    \begin{aligned}
+                        \frac{dN}{dt}= rN(1-\frac{N}{K})\\
+                        \frac{dN}{N}=\frac{1}{t}dt(1-\frac{N}{K})\\
+                        k\longrightarrow population\\
+                        N_{o}\longrightarrow population\\
+                        [r]= \longrightarrow\frac{1}{t} \text{so units workout}
+
+                    \end{aligned}
+                \end{equation}
+            \item Show that the system can be rewritten in the dimensionless form
+                \begin{equation}
+                    \begin{aligned}
+                        \frac{dx}{dt}=x(1-x)\\
+                        x(0)= x_{0}\\
+                        x=\frac{N}{K}\\
+                        N=xK\\
+                        \dot{x}=x(1-x)\\
+                        K\dot{x}=rN(1-x)\\
+                        k\dot{x}=rxK(1-x)\\
+                        \dot{x}=rx(1-x)\\
+                        \frac{dx}{dt}=rx(1-x)\\
+                        r \frac{dx}{dt}=rx(1-x)\\
+                        \frac{dx}{dt}=x(1-x)\\
+                        x(0)=x_{0}\\
+                        \boxed{\frac{dx}{dt}=x(1-x)}\\
+                        \boxed{\dot{x}=x(1-x))}
+
+                    \end{aligned}
+                \end{equation}
+            \item  Find a different nondimensionalization in terms of variables u and τ, where u is chosen such that the initial condition is always u0 = 1
+                \begin{equation}
+                    \begin{aligned}
+                        \dot{N}=rN(1-\frac{N}{K})\\
+                        N(0)=N_{0}\\
+                        N=uN_{0}
+                        u=\frac{N}{N_{0}}\\
+                        u(0)=1\\
+                        \dot{u}=\frac{dN}{N_{0}}\\
+                        \boxed{dN=\dot{u}=N_{0}}\\
+                        dN0=rN_{0}u(1+\frac{N_{0}}{K}u)\\
+                        \dot{u}N_{0}=rN_{0}u(1-\frac{N_{0}}{K}u)\\
+                        \dot{u}=ru(1-\frac{N_{0}}{K}u)\\
+                        \frac{1}{r}\dot{u}=u(1-\frac{N_{0}}{K}u)\\
+                        \frac{1}{r}\frac{du}{dt}=u(1-\frac{N_{0}}{K}u)\\
+                        \tau=rt
+                        d\tau=rdt\\
+                        dt=\frac{d\tau}{r}\\
+                        \frac{du}{d\tau}=u(1-\frac{N_{0}}{K}u)\\
+                        \boxed{\frac{du}{d\tau}=u(1-ku), u(0)=1}
+
+                    \end{aligned}
+                \end{equation}
+            
+        \end{enumerate}
+       
+    
+      
+\end{enumerate}
+\end{document}
