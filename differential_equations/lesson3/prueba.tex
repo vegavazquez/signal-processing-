@@ -1,0 +1,563 @@
+\documentclass[a4paper,10pt]{article}
+% packages
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{datetime}  
+\geometry{a4paper,total={170mm,257mm},left=20mm,top=20mm,}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{color}
+\usepackage{listingsutf8}
+\usepackage{subcaption}
+\usepackage{siunitx}
+\usepackage{graphicx}
+
+\usepackage{blindtext}  
+\usepackage{multicol}  
+
+
+% Title
+\title{Solutions of the Exercises of Lesson 3}
+\author{Vega Vázquez Ardid}
+\date{\today}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+	\item 
+	Analyze the following equations graphically. In each case, sketch the vector field on the real line, find all the fixed points, classify their stability, and sketch the graph of x(t) for different initial conditions. Then try for a few minutes to obtain the analytical solution for x(t); if you get stuck, don’t try for too long since in several cases it’s impossible to solve the equation in closed form!
+
+	\begin{enumerate}
+		\item
+			\begin{equation}
+			    \dot{x}=4x^2-16
+			\end{equation}
+			Analytical solution:
+			\begin{equation}
+			    \begin{aligned}
+    			    \left( \frac{dx}{dt} \right)=4x^2-16\\
+        			\frac{1}{4}\int \frac{dx}{x^2-4}  = \int dt \\
+        			\int \frac{dx}{x^2-4} =4\int dt\\
+        			\frac{1}{4}[\int \frac{dx}{x-2}-\int \frac{dx}{x+2}]=4t\\
+        			\boxed{\frac{1}{4}Ln\abs{\frac{x-2}{x+2}}=4t+c}
+        		\end{aligned}
+			\end{equation}
+			Getting ride of the Ln, we obtain:
+			\begin{equation}
+			    \begin{aligned}
+    			    \frac{x-2}{x+2}=e^{4t+c}\\
+    			    1-\frac{4}{x+2}=e^{16t+4c}\\
+    			    1-e^{16t+4c}=\frac{4}{x+2}\\
+    			    x(t)=\frac{4}{1-e^{16t+4c}}-2\\
+    			    \boxed{x(t)=\frac{2(1-e^{16t+4c})}{1-e^{16t+4c}}}
+    			 \end{aligned}
+    		\end{equation}
+    		substituting the initial condition:
+    		\begin{equation}
+    		    \begin{aligned}
+    		        \boxed{x(t)=\frac{2(1-e^{16t}+x_{0} + x_{0}e^{16t})}{2-e^{16t}x_{0}+ x_{0} + 2e^{16t}}}
+    		    \end{aligned}
+    		\end{equation}
+			    
+			Graph solution:
+			\begin{equation}
+			    \begin{aligned}
+    			    f(x)=0\\
+    			    4x^2-16=0\\
+    			    x=2, \textbf{unstable}\\
+    			    x=-2, \textbf{stable}
+    			 \end{aligned}
+			\end{equation}
+			\begin{figure}[h]
+                \centering
+                \includegraphics[width=0.40\textwidth]{ej1img11.jpg}
+                \caption{vector field, fixed points}
+                \label{fig:mesh1}
+            \end{figure}
+            
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.40\textwidth]{ej1img12.jpg}
+                \caption{Phase Diagram}
+                \label{fig:mesh1}
+            \end{figure}
+            
+				\newpage	
+		\item 
+		   \begin{equation}
+		        \dot{x}=x-x^3
+		    \end{equation}
+		    Analytical solution:
+		    \begin{equation}
+		        \begin{aligned}
+    		        \left( \frac{dx}{dt} \right)=x-x^3\\
+    		        \int \frac{dx}{x-x^3}  = \int dt \\
+    		        \int \frac{dx}{x(1-x^2)}  =t+c \\
+    		        \frac{dx}{x(x-1)(x+1)}  = \frac{A+B+C}{x(x-1)(x+1)}\\
+    		            if \hspace{0.5cm} x=0\\
+    		                A=-1\\
+    		            if  \hspace{0.5cm} x=1\\
+    		                C=\frac{1}{2}\\
+    		            if  \hspace{0.5cm} x=-1\\
+    		                B=\frac{1}{2}\\
+    		        \int \frac{dx}{x(x-1)(x+1)}=-\int\frac{1}{x} + \frac{1}{2}\int[\frac{1}{x+1} + \frac{1}{x-1}]dx \\
+    		        \boxed{Ln\abs{\frac{x}{\sqrt{1-x^2}}}= t + c}
+    		    \end{aligned}
+		    \end{equation}
+		    Getting ride of the Ln, we obtain:
+		    \begin{equation}
+		        \begin{aligned}
+		            \boxed{x(t)=\frac{e^{t}}{\sqrt{e^{2t}+\frac{1}{(x_{0})^2}-1}}}\\
+		            \text{or}\\
+		            \boxed{x(t)=\frac{-e^{t}}{\sqrt{e^{2t}+\frac{1}{(x_{0})^2}-1}}}
+		        \end{aligned}
+		    \end{equation}
+		    Graphical solution:
+		   \begin{equation}
+    		   \begin{aligned}
+    		        f(x)=0\\
+        		   x(1-x^2)=0\\
+        		   \textbf{x=1, stable}\\
+        		   \textbf{x=-1, stable}
+    		    \end{aligned}
+		   \end{equation}
+		   \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.40\textwidth]{ej1img21.jpg}
+                \caption{vector field, fixed points}
+                \label{fig:mesh1}
+        \end{figure}
+        \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.40\textwidth]{ej1img22.jpg}
+                \caption{Phase Diagram}
+                \label{fig:mesh1}
+        \end{figure}
+        \newpage
+        \item
+		    \begin{equation}
+		        \dot{x}=e^{-x}sin(x)\\
+		    \end{equation}
+		    Analytical solution:
+		    \begin{equation}
+		        \begin{aligned}
+    		       \text{ when trying to find the analytical solution we obtain}\\
+    		        \int\frac{dx}{e^{-x}sinx}=\int dt\\
+    		        \boxed{\int\frac{e^{x}}{sinx}dx=t+c}\\
+    		        \text{left integral is defined in the complex plane}
+		        \end{aligned}
+		    \end{equation}
+		   
+		    Graphical solution:
+		    \begin{equation}
+		        \begin{aligned}
+		            f(x)=0\\
+		            e^{-x}sin(x)=0\\
+		        \end{aligned}
+		    \end{equation}
+		    since the exponential can´t ever be null then; 
+		   
+		    \begin{math}
+		        \begin{aligned}
+		            sin(x)=0\\
+                    x=\pi{k}\\
+                	x=\pi{2K}, \textbf{unstable}\\
+                	x=\pi{(2K-1)},\textbf{stable}
+		       \end{aligned}
+		    \end{math}
+		            
+		         
+		    
+		    \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.40\textwidth]{ej1img31.jpg}
+                \caption{vector field, fixed points}
+                \label{fig:mesh1}
+            \end{figure}
+            
+            
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.40\textwidth]{ej1img32.jpg}
+                \caption{Phase Diagram}
+                \label{fig:mesh1}
+            \end{figure}
+            
+            
+        \newpage  
+	    \item 
+	        \begin{equation}
+		        \dot{x}=1+ \frac{1}{2}cos(x)\\
+		    \end{equation}
+		    Analytical solution:
+		    This equation can be obtain with a Weirstrass solution in the form of:
+		    \begin{equation}
+		        \begin{aligned}
+    		        r= tan\frac{x}{2}\\
+    		        cos(x)=\frac{1-r^2}{1+r^2}\\
+    		        sin(x)=\frac{2r}{r^2+1}\\
+    		        dx=\frac{2 dr}{1+r^2}\\
+    		        \frac{dx}{dt}=1 + \frac{1}{2}cos(x)\\
+    		        \int\frac{dx}{1+\frac{1}{2}cos(x)}= t + c\\
+    		        \int\frac{1}{1+\frac{1}{2}\frac{1-r^2}{1+r^2}}\frac{2}{1+ r^2}dr= t + c\\
+    		        \int\frac{2}{1 + r^2 + \frac{1}{2}(1-r^2)}dr = t + c\\
+    		        \int\frac{2}{3 + r^2}dr= t + c\\
+    		        \frac{2}{3}\int\frac{dr}{1 + \frac{r^2}{3}}= t + c\\
+    		        \frac{2}{3}\int\frac{dr}{1+(\frac{r}{\sqrt{3}})^2}= t + c\\
+    		        \text{with another change of variable}\\
+    		        u= \frac{r}{\sqrt{3}}\\
+    		        du=\frac{dr}{\sqrt{3}}\\
+    		        \frac{2\sqrt{3}}{3}\int\frac{du}{1 + u^2}=t + c\\
+    		        \frac{2}{\sqrt{3}}arctan(u) = t + c\\
+    		        \frac{2}{\sqrt{3}}arctan(\frac{r}{\sqrt{3}})= t + c\\
+    		        \boxed{\frac{2}{\sqrt{3}}arctan(\frac{1}{\sqrt{3}}tan(\frac{x}{2}))= t + c}
+		        \end{aligned}
+		    \end{equation}
+		    Applying tan and arctan successively to each side of the equation, we obtain:
+		    \begin{equation}
+		        \begin{aligned}
+		            arctan(\frac{1}{\sqrt{3}}tan(\frac{x}{2}))=\frac{\sqrt{3}}{2}(t+c)\\
+		            \frac{1}{\sqrt{3}}tan(\frac{x}{2})=tan(\frac{\sqrt{3}}{2}(t+c))\\
+		            tan(\frac{x}{2})=\sqrt{3}(tan(\frac{\sqrt{3}}{2}(t+c)))\\
+		            \frac{x}{2}=arctan(\sqrt{3}(tan(\frac{\sqrt{3}}{2}(t+c))))\\
+		            \boxed{x(t)=2arctan(\sqrt{3}(tan(\frac{\sqrt{3}}{2}(t+c)))))}\\
+		            \boxed{x(t)=2arctan(\sqrt{3}tan(arctan(\frac{tan(\frac{x_{0}}{2})}{\sqrt{3}}) +\frac{\sqrt{3}t}{4}))} 
+		       \end{aligned}
+		     \end{equation}
+		     Graphical solution:
+		    \begin{equation}
+		        \begin{aligned}
+    		        f(x)=0\\
+    		        \text{since there is no break points with x-axis, the function varies between}\\
+    		        [\frac{-1}{2},\frac{1}{2}]\\ 
+    		        \text{but is never null, thus it does not have equilibrium points:}\\
+		        \end{aligned}
+	       \end{equation}
+	        
+	        
+	        
+	        \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.40\textwidth]{ej1img41.jpg}
+                \caption{vector field, fixed points}
+                \label{fig:mesh1}
+            \end{figure}
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.40\textwidth]{ej1img42.jpg}
+                \caption{Phase Diagram}
+                \label{fig:mesh1}
+            \end{figure}
+	\end{enumerate}
+	\newpage
+    \item 
+    Find an equation x = f(x) whose solutions x(t) are consistent with those shown in Figure 1.
+    
+    
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.40\textwidth]{ej2img1.jpg}
+            \caption{Phase Diagram}
+            \label{fig:mesh1}
+        \end{figure}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.40\textwidth]{ej2img2.jpg}
+            \caption{vector field, fixed points}
+            \label{fig:mesh1}
+        \end{figure}
+         \begin{equation}
+            \dot{x}=f(x)
+        \end{equation}
+        
+        \begin{equation}
+            \begin{aligned}
+                Break points:\\
+                x=1\\
+                x=0\\
+                Thus:\\
+                x(x-1)\\
+                or\\
+                \boxed{f(x)=x^2-x}
+            \end{aligned}
+        \end{equation}
+        
+    \newpage    
+    \item 
+    Solve the exact solution of logistic equation. There are two ways to solve the logistic equation N =rN(1-N/K) analytically for an arbitrary initial condition N0:
+    \begin{enumerate}
+		\item Separate variables and integrate, using partial fractions.
+		    \begin{equation}
+		        \begin{aligned}
+		            \dot{N}= rN(1-\frac{N}{K}\\
+		            \frac{dN}{dt}= rN(1- \frac{N}{K}\\
+		            \frac{dN}{dt}= rN(\frac{k-N}{K})\\
+		            \frac{dN}{dt}=\frac{r}{K}N(K-N)\\
+		            \frac{K}{r}\frac{dN}{N(K-N)}=dt\\
+		            \frac{dN}{N(k-N)}= \frac{A+B}{N(k-N)}\\
+		            if \hspace{0.5cm} N=0\\
+		            A= \frac{1}{K}\\
+		            if \hspace{0.5cm} N=K\\
+		            B= \frac{1}{K}\\
+		            \int\frac{dN}{N(K-N)}=\frac{1}{K}\int\frac{1}{N}dN + \frac{1}{K}\int\frac{1}{k-N}dN\\
+		            \frac{1}{K}[Ln\abs{N}- Ln\abs{K-N} ]=\frac{r}{K}t + c\\
+		            Ln\abs{\frac{N}{K-N}}= rt + ck\\
+		            \frac{N}{K-N}= e^{rt+kc}\\
+		            N= (K-N)e^{rt+kc}\\
+		            if N(0)=N_{0}\\
+		            N= (K-N)e^{rt}e^{kc}\\
+		            N= ke^{rt}-Ne^{rt}e^{kc}\\
+		            N(e^{rt}e^{kc}-1)=Ke^{rt}e^{kc}\\
+		            N_{0}(e^{rt}-1)=Ke^{kc}\\
+		            N_{0}=e^{kc}(N_{0}-K)\\
+		            \boxed{e^{kc}=\frac{N_{0}}{N_{0}-K}}
+		        \end{aligned}
+		    \end{equation}
+		\newpage 
+        \item Make the change of variables x = 1/N. Then derive and solve the resulting differential equation for x.
+            \begin{equation}
+                \begin{aligned}
+                     N=\frac{1}{x}\\
+                     \frac{dN}{dt}=\frac{d}{dt}\frac{1}{x}=\frac{d}{dx}\frac{1}{x}\frac{dx}{dt}=-\frac{\dot{x}}{x^2}\\
+                     \frac{dN}{dt}=rN(1-\frac{N}{K})\\
+                     -\frac{\dot{x}}{x^2}=rN(1-\frac{N}{K}\\
+                     - \frac{\dot{x}}{x^2}=\frac{r}{x}(1-\frac{1}{xk}\\
+                     -\dot{x}= rx(1-\frac{1}{xk})\\
+                     \dot{x}=\frac{r}{k}-rx\\
+                     \frac{dx}{dt}=\frac{r}{k}-rk\\
+                     \int\frac{dx}{x- \frac{1}{k}}=-r\int dt\\
+                     Ln\abs{x-\frac{1}{k}}=-rt + c\\
+                     x-\frac{1}{k}= e^{-rt + c}\\
+                     x(t)=\frac{1}{k} + e^{-rt}e^{c}\\
+                     x(t)= \frac{1}{k} + e^{-rt}c\\
+                     N=\frac{1}{x}\\
+                     x=\frac{1}{N}\\
+                     x(t)=\frac{kce^{-rt}+1}{k}\\
+                     \boxed{N(t)=\frac{k}{kce^{-rt}+1}}\\
+                     \text{Initial condition:}
+                     N(0)=N_{0}\\
+                     N(0)=\frac{K}{kc+1}\\
+                     N_{0}=\frac{k}{kc+1}\\
+                     N_{0}(kc+1)=k\\
+                     1+kc=\frac{k}{N_{0}}\\
+                     kc=\frac{k}{N_{0}}-1\\
+                     \boxed{N(t)=\frac{k}{1+ (\frac{k}{N_{0}}-1)e^{-rt}}}\\
+                \end{aligned}
+            \end{equation}
+    \end{enumerate}
+    \newpage
+    
+    \item 
+    The growth of cancerous tumors can be modeled by the Gompertz law N=-aNln(bN), where N(t) is proportional to the number of cells in the tumor, and a, b > 0 are parameters.
+    \begin{enumerate}
+        \item Interpret a and b biologically.
+                \begin{equation}
+                    \begin{aligned}
+                        \text{In order to interpret  b we obtain the equilibrium points:}\\
+                        \frac{dN}{dt}=-aNLn(bN)\\
+                        f(N)=0\\
+                        -aNln(bN)=0\\
+                        \frac{-aNLn(bN)}{-a}=0\\
+                        NLn(bN)=0\\
+                        N=0\\
+                        Ln(bN)=0\\
+                        bN=1\\
+                        N=\frac{1}{b}
+                    \end{aligned}
+                \end{equation}
+                As we can see
+                \begin{equation}
+                    \begin{aligned}
+                        \frac{1}{b}\\
+                        \text{is an equilibrium point, where:}\\
+                        \text{if}\hspace{0.5cm} N < \frac{1}{b}\hspace{0.5cm} \text{then;}\hspace{0.5cm} f(N)> 0\\
+                        \text{if}\hspace{0.5cm} N > \frac{1}{b}\hspace{0.5cm} \text{then;}\hspace{0.5cm} f(N)< 0
+                    \end{aligned}
+                \end{equation}
+                \begin{equation}
+                \text{we can conclude then that, }\frac{1}{b},\text{ is the limiting size of the tumor.}
+                \end{equation}
+                On the other hand a corresponds to the proliferation ability (how fast the tumor grows), that when talking about cells, depends on the availability of substrate, oxygen, etc.
+        \item  
+            Sketch the vector field and then graph N(t) for various initial values. The predictions of this simple model agree surprisingly well with data on tumor growth, as long as N is not too small; see Aroesty et al. (1973) and Newton (1980) for examples.
+            As the equilibrium points where obtained in a) we sketch the graph for different initial conditions
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.40\textwidth]{ej4img1.jpg}
+                \caption{Vector field, Fixed points}
+                \label{fig:mesh1}
+            \end{figure}
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.40\textwidth]{ej4img2.jpg}
+                \caption{Phase Diagram}
+                \label{fig:mesh1}
+            \end{figure}
+    \end{enumerate}
+    
+    \newpage
+    \item Suppose X and Y are two species that reproduce exponentially fast: X = aX and Y = bY, respectively, with initial conditions X0 , Y0 > 0 and growth rates a > b > 0. Here X is ”fitter”than Y in the sense that it reproduces faster, as reflected by the inequality a > b. So we’d expect X to keep increasing its share of the total population X + Y as t → infinity. The goal of this exercise is to demonstrate this intuitive result, first analytically and then geometrically.
+    \begin{enumerate}
+        \item  Let x(t) = X(t)/[X(t) + Y (t)] denote X ’s share of the total population. By solving for X(t) and Y (t), show that x(t) increases monotonically and approaches 1 as t → infinity
+        
+            \begin{equation}
+                \begin{aligned}
+                     x(t)=\frac{x(t)}{(x(t)+ y(t))}\\
+                     \dot{X}=aX\\
+                     \dot{Y}= bY\\
+                     \frac{dX}{dt}=aX\\
+                     \frac{dX}{X}=adt\\
+                     Ln(X)= at + c\\
+                     X(t)= e^{at + c}= e^{at}C_{x}\\
+                     \frac{dY}{dt}= bY\\
+                     \frac{dY}{Y}= bdt\\
+                     Ln(Y)= bt + C_{y}\\
+                     Y(t)= e^{bt}C_{y}\\
+                    \left.
+                    \begin{array}{rcl}
+                        X(0)= X_{0}; C_{x}= X_{0}
+                      \\Y(0)=Y_{0}; C_{y}= Y_{0}
+                    \end{array}
+                    \right\}
+                    X_{0}, Y_{0} > 0\\
+                    X(t)= X_{0}e^{at}\\
+                    Y(t)= Y_{0}e^{bt}\\
+                    a>b>0\\
+                    x(t)= \frac{x_{0}e^{at}}{x_{0}e^{at}+y_{0}e^{bt}}\\
+                    \lim_{t \to \infty}(x(t))=\\
+                    \lim_{t \to \infty}\frac{x_{0}e^{at}}{x_{0}e^{at}+y_{0}e^{bt}}=\\
+                    \lim_{t \to \infty}\frac{x_{0}}{x_{0}+y_{0}\frac{e^{bt}}{e^{at}}}=\\
+                    \lim_{t \to \infty}\frac{x_{0}}{x_{0} + y_{0}e^{(b-a)t}}=\\
+                    \lim_{t \to \infty}\frac{x_{0}}{x_{0}}= 1\\
+                    \text{Because }a>b\text{ the exponential tends to 0 if the time tends to infinity}
+                \end{aligned}
+            \end{equation}
+            \newpage
+        \item Alternatively, we can arrive at the same conclusions by deriving a differential equation for x(t). To do so, take the time derivative of x(t) = X(t)/[X(t)+Y (t)] using the quotient and chain rules. Then substitute for X and Y and thereby show that x(t) obeys the logistic equation x = (a - b)x(1 - x). Explain why this implies that x(t) increases monotonically and approaches 1 as t → infinity.
+            \begin{equation}
+                \begin{aligned}
+                     x(t)= \frac{X(t)}{X(t)+ Y(t)}\\
+                     \dot{x(t)}= \frac{\dot{x(t)}(X(t)+ y(t))- X(t)(\dot{x}+ \dot{y})}{(x + y)^2 }\\
+                     \dot{x(t)}= \frac{\dot{x}y - x\dot{y}}{(x + y)^2}\\
+                     \dot{x}= ax\\
+                     \dot{y}= by\\
+                     \dot{x}=\frac{(a-b)XY}{(x + y)^2}\\
+                     Because: x(t)= \frac{X}{x+y}\\
+                     \text{And the objective is:} \hspace{0.5cm}\dot{x(t)}=rx (1-\frac{x}{k})\\
+                     \frac{Xy}{(x+y)^2}= \frac{X}{x+ Y}(1-\frac{X}{(x+y)k}\\
+                     \frac{Xy}{(x+y)^2}=\frac{X}{x + y}- \frac{X^2}{k(x+y)^2}=\frac{kX(X + y)^2-X^2}{k(x+ y)^2}= \frac{kX^2+ kXy- x^2}{k(x+y)^2} \rightarrow k=1\\
+                     \dot{x(t)}=(a-b)\frac{X}{x+y}(1-\frac{X}{x+y})\\
+                     \boxed{\dot{x(t)}=(a-b)x(1-x)} \rightarrow \text{Logistic Equation with:}\\
+                     r= a- b>0\\
+                     k=1\\
+                \end{aligned}
+            \end{equation}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej5img1.jpg}
+                    \caption{Vector Field, Fixed points}
+                    \label{fig:mesh1}
+                \end{figure}
+                
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej5img2.jpg}
+                    \caption{Phase Diagram }
+                    \label{fig:mesh1}
+                \end{figure}
+                
+    \end{enumerate}
+    \newpage
+    \item For each of the following vector fields, plot the potential function V (x) and identify all the equilibrium points and their stability.
+    \begin{enumerate}
+        \item
+            \begin{equation}
+                \dot{x}=x(1-x)
+            \end{equation}
+             Potential function:
+            \begin{equation}
+                \begin{aligned}
+                    f(x)= x(1-x)\\
+                    f(x)=-\frac{dv(X)}{dx}\\
+                    x-x^2=-\frac{dv(x)}{dx}\\
+                    v(x)= - \int x(1-x)dx= -\frac{x^2}{2}+ \frac{x^3}{3}+ c\\
+                    c=0\\
+                    v(x)= -\frac{x^2}{x} + \frac{x^3}{3}= x^2(\frac{-1}{2}+ \frac{x}{3})\\
+                    x= 0 [double]\\
+                    x= \frac{3}{2}\\
+                    \dot{v(x)}=- f(x)=-x(1-x)\\
+                    x^{*}=0 \hspace{0.5cm}(0,0),\hspace{0.5cm}\textbf{unstable} \\
+                    x^{*}=1 \hspace{0.5cm}(1,-\frac{1}{6}),\hspace{0.5cm} \textbf{stable}
+                \end{aligned}
+            \end{equation}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej6img1.jpg}
+                    \caption{Potential function V(x)}
+                    \label{fig:mesh1}
+                \end{figure}
+        \newpage        
+        \item
+            \begin{equation}
+                \dot{x}=sen(X)
+            \end{equation}
+            potential function:
+            \begin{equation}
+                \begin{aligned}
+                    f(x)=-\frac{dv(x)}{dx}\\
+                    v(x)=\int (-sen(x))dx= cos(x) + c\\
+                    c=0\\
+                    v(x)=0\\
+                    x= 1\\
+                    x=\frac{\pi}{2} + k\pi; k \in \mathbb Z\\
+                    \dot{v(x)}=-f(x)=-sen(x)\\
+                    x^{*}=0, \hspace{0.5cm}[x^{*}= 2k\pi; k \in \mathbb Z],\hspace{0.5cm} \textbf{unstable}\\
+                    x^{*}=\pi, \hspace{0.5cm}[x^{*}=(2k+1)\pi,k  \in \mathbb Z],\hspace{0.5cm} \textbf{stable}\\
+                \end{aligned}
+            \end{equation}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej6img2.jpg}
+                    \caption{Potential function V(x)}
+                    \label{fig:mesh1}
+                \end{figure}
+                
+                
+        \newpage        
+        \item 
+            \begin{equation}
+                \dot{x}=-sinh(x)
+            \end{equation} 
+            potential function:
+            \begin{equation}
+                \begin{aligned}
+                    f(x)= -\frac{e^{x}-e^{-x}}{2}\\
+                    v(x)=\int sinh(x)dx=\in\frac{e^{x}-e^{-x}}{2}=\frac{1}{2}\int (e^{x}- e^{-x})dx=\frac{1}{2}(e^{x}+ e^{-x}) + c= cosh(x) + c\\
+                    c=0\\
+                    v(x)=cosh(x)\\
+                    x^{*}=1,\textbf{ stable}
+                \end{aligned}
+            \end{equation}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.40\textwidth]{ej6img3.jpg}
+                    \caption{Potential function V(x)}
+                    \label{fig:mesh1}
+                \end{figure}        
+                
+    \end{enumerate}
+             
+	
+	
+	
+\end{enumerate}
+\end{document}
